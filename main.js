@@ -11,9 +11,9 @@ const fs = require('fs')
 const { color } = require('./lib/color')
 const {_wait, getBuffer, h2k, generateMessageID, banner, getGroupAdmins, getRandom, start, success, author, close } = require('./lib/functions');
 const { Miminnya, SesionName, ownerNumber} = require('./setting.json')
-require('./zeebot.js')
+require('./index.js')
 const moment = require("moment-timezone")
-nocache('./zeebot.js', module => console.log(`${module} Im Coming 4you❤️`))
+nocache('./index.js', module => console.log(`${module} Was Updated ✓`))
 const _gombal = JSON.parse(fs.readFileSync('./lib/data/gombal.json'));
 const _welkom = JSON.parse(fs.readFileSync('./lib/data/welcome.json'))
 const gombal = _gombal[Math.floor(Math.random() * _gombal.length)]
@@ -60,7 +60,7 @@ function _0x25ba(_0x5d4fc7,_0x2d0a07){var _0x53f27a=_0x53f2();return _0x25ba=fun
     fs.writeFileSync(`./${SesionName}.json`, JSON.stringify(zee.base64EncodedAuthInfo(), null, '\t'))
     
     zee.on('chat-update', async (message) => {
-    require('./zeebot.js')(zee, message, _welkom)
+    require('./index.js')(zee, message, _welkom)
     })
     
 	zee.on('group-participants-update', async (anu) => {
